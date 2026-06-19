@@ -1,320 +1,236 @@
 # VisitBrief AI
 
-## Executive Summary
+AI-Powered Case Preparation Assistant
 
-VisitBrief AI is a fictional GovTech AI assistant designed to support caseworker home-visit preparation using synthetic case records.
+A responsible AI workspace designed to help caseworkers prepare for client visits by reviewing records, identifying follow-up items, surfacing deadlines, and generating visit preparation briefs.
 
-The project was built as an AI Product Management case study to demonstrate how an AI Product Manager can design, evaluate, and deploy a responsible AI assistant for a high-risk government workflow.
-
-Rather than focusing solely on model integration, the project emphasizes workflow design, safety guardrails, source traceability, evaluation, human oversight, and product thinking.
-
-All data used in the project is synthetic and created for demonstration purposes.
+This project was created as an AI Product Management portfolio case study demonstrating product discovery, workflow design, retrieval-based AI architecture, evaluation planning, responsible AI practices, and deployment.
 
 ---
 
-## Problem Statement
+## Live Demo
 
-Caseworkers often review information across multiple documents before conducting a home visit.
+Streamlit Application:
 
-Preparation may require reviewing:
+https://visitbrief-ai.streamlit.app/
+
+GitHub Repository:
+
+https://github.com/Hazi-Labs/visitbrief-ai
+
+---
+
+## Problem
+
+Caseworkers often prepare for visits by manually reviewing:
 
 * Intake summaries
 * Contact notes
-* Provider records
-* Visit notes
+* Provider updates
 * Service plans
-* Deadlines and follow-up actions
+* Previous visit records
 
-This process can be time-consuming and may increase the risk of missing relevant information.
-
-The challenge is not making decisions for caseworkers.
-
-The challenge is helping them prepare efficiently while maintaining human oversight and accountability.
+Information is frequently scattered across multiple documents, making preparation time-consuming and increasing the risk of missing important details.
 
 ---
 
-## Solution Overview
+## Solution
 
-VisitBrief AI provides a workspace where users can:
+VisitBrief AI provides a centralized preparation workspace that enables users to:
 
-* Review synthetic case records
-* Generate visit-preparation briefs
-* Ask factual questions about selected records
-* Review case timelines
-* Track tasks and deadlines
-* Evaluate AI guardrail behavior
+* Review case records
+* Track follow-up activities
+* Identify deadlines
+* Generate visit preparation briefs
+* Ask questions about the selected case
+* Explore workflow context
 
-The assistant is intentionally limited to preparation support and source review.
-
-The system does not make recommendations, decisions, risk scores, legal judgments, eligibility determinations, or service-plan recommendations.
-
----
-
-## Product Goals
-
-### Primary Goal
-
-Reduce preparation effort required to review case information before a visit.
-
-### Secondary Goals
-
-* Improve information accessibility
-* Surface missing or conflicting information
-* Improve source traceability
-* Demonstrate responsible AI design patterns
+The system supports preparation activities while maintaining human review and accountability.
 
 ---
 
 ## Key Features
 
-### Workspace Dashboard
+### Dashboard
 
-* Case overview
-* Preparation readiness indicators
-* Open task tracking
-* Upcoming deadlines
+Provides visibility into:
+
+* Case status
+* Priority
+* Open tasks
+* Record counts
+* Preparation progress
 
 ### Case Records
 
-* Review synthetic source records
-* Navigate individual case documents
-* View record content directly
+Allows users to:
 
-### Timeline View
+* Review source documents
+* Explore historical records
+* Understand case context
 
-* Chronological case activity history
-* Intake, contacts, visits, provider updates, and reviews
+### Tasks
 
-### Tasks & Follow-Ups
+Displays:
 
-* Open activities
-* Review reminders
-* Visit preparation checklist
+* Follow-up items
+* Due dates
+* Ownership
+* Preparation checklist items
 
 ### Calendar
 
-* Upcoming actions
-* Review deadlines
-* Scheduled preparation work
+Provides visibility into:
 
-### VisitBrief AI
+* Upcoming deadlines
+* Scheduled activities
+* Visit planning milestones
 
-* OpenAI-powered assistant
-* Conversation history
-* Case-specific question answering
-* Visit brief generation
-* Citation-based responses
+### AI Assistant
 
-### Evaluation
+Supports:
 
-* Retrieval testing
-* Refusal testing
-* Baseline AI quality validation
+* Question answering
+* Case summarization
+* Brief generation
+* Context exploration
 
 ---
 
 ## Responsible AI Design
 
-VisitBrief AI intentionally includes several safety controls.
+VisitBrief AI was intentionally designed with guardrails.
 
-### Human-in-the-Loop Design
+The system:
 
-The assistant supports preparation only.
+* Requires human review
+* Does not make decisions
+* Uses synthetic data
+* Provides limited-scope assistance
+* Prioritizes transparency
+* Uses retrieval-based responses
 
-Final decisions remain with human professionals.
-
-### Refusal Behavior
-
-The system refuses requests involving:
-
-* Case decisions
-* Service recommendations
-* Placement decisions
-* Risk scoring
-* Legal conclusions
-* Eligibility determinations
-
-### Source Grounding
-
-Responses are generated using selected case records.
-
-### Missing Information Handling
-
-When information is unavailable, the assistant explicitly states that insufficient verified information exists.
-
-### Evaluation Framework
-
-Baseline tests validate:
-
-* Follow-up retrieval
-* Deadline retrieval
-* Missing-information handling
-* Conflict identification
-* Refusal behavior
+The objective is to support workers rather than replace professional judgment.
 
 ---
 
-## AI Architecture
+## Architecture
 
-```text
-User
-  ↓
-VisitBrief AI Workspace
-  ↓
-Safety Layer
-  ↓
+User Interface
+
+↓
+
+Streamlit Application
+
+↓
+
 Retrieval Layer
-  ↓
-OpenAI Integration
-  ↓
-Citation Layer
-  ↓
-Response
-```
 
-### Components
+↓
 
-#### UI Layer
+Synthetic Case Records
 
-* Streamlit
+↓
 
-#### Safety Layer
+OpenAI API
 
-* Request filtering
-* Decision-refusal behavior
+↓
 
-#### Retrieval Layer
+Response Generation
 
-* Case-record retrieval
-* Context assembly
+↓
 
-#### AI Layer
+Human Review
 
-* OpenAI GPT integration
-* Grounded response generation
+---
 
-#### Citation Layer
+## Evaluation
 
-* Source traceability
-* Document attribution
+The project includes:
 
-#### Evaluation Layer
+* Evaluation Plan
+* Evaluation Dataset
+* Test Results Template
+* Success Metrics
+* Responsible AI Guardrails
 
-* Baseline validation tests
+Evaluation focuses on:
+
+* Answer quality
+* Source grounding
+* Brief usefulness
+* Hallucination reduction
+* Workflow support
+
+---
+
+## Documentation
+
+The repository includes complete AI Product Management documentation covering:
+
+* Opportunity Assessment
+* User Workflows
+* Jobs To Be Done
+* Stakeholder Mapping
+* Responsible AI Review
+* Risk Register
+* Requirements
+* Architecture
+* Evaluation
+* Launch Planning
+* Monitoring
+* Post-Launch Learning
 
 ---
 
 ## Tech Stack
 
-### Frontend
+Frontend:
 
 * Streamlit
 
-### Backend
-
-* Python
-
-### AI
+AI:
 
 * OpenAI API
 
-### Configuration
+Language:
 
-* python-dotenv
+* Python
 
-### Data
+Deployment:
 
-* Synthetic markdown case records
+* Streamlit Community Cloud
 
----
+Version Control:
 
-## Project Structure
-
-```text
-VisitBrief-AI
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── .env.example
-├── .gitignore
-│
-├── .streamlit
-│   └── config.toml
-│
-├── data
-│   └── synthetic_cases
-│
-├── docs
-│
-└── src
-    ├── ai_client.py
-    ├── citation_utils.py
-    ├── data_loader.py
-    ├── evaluation.py
-    ├── retrieval.py
-    └── safety.py
-```
+* GitHub
 
 ---
 
-## Running Locally
+## Project Status
 
-Create a virtual environment:
+Current Status:
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+Production Demonstration Build
 
-Install dependencies:
+Capabilities:
 
-```bash
-pip install -r requirements.txt
-```
-
-Create a `.env` file:
-
-```env
-OPENAI_API_KEY=your_openai_api_key
-```
-
-Run the application:
-
-```bash
-streamlit run app.py
-```
+* Live deployment
+* AI-assisted question answering
+* Visit brief generation
+* Workflow support
+* Responsible AI guardrails
 
 ---
 
-## Future Enhancements
+## Author
 
-Potential future enhancements include:
+Hazi Ali Pattan
 
-* Multi-case retrieval
-* Enhanced citation linking
-* Document upload workflows
-* Evaluation dashboards
-* Caseworker feedback loops
-* Role-based permissions
-* Analytics and adoption tracking
+MS Marketing Analytics & Insights
 
----
+AI Product Management Portfolio Project
 
-## Product Management Takeaways
+LinkedIn:
 
-This project demonstrates how an AI Product Manager can move from:
-
-1. Problem definition
-2. Workflow design
-3. User requirements
-4. Synthetic data creation
-5. Responsible AI guardrails
-6. Retrieval architecture
-7. LLM integration
-8. Evaluation design
-9. Deployment readiness
-
-The focus of the project is not simply building an AI assistant.
-
-The focus is demonstrating how responsible AI systems can be designed for high-risk workflows while maintaining transparency, traceability, and human oversight.
+https://linkedin.com/in/hazialipattan
